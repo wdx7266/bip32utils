@@ -338,20 +338,20 @@ class BIP32Key(object):
     def dump(self):
         "Dump key fields mimicking the BIP0032 test vector format"
         print("   * Identifier")
-        print("     * (hex):      ", self.Identifier().encode('hex'))
-        print("     * (fpr):      ", self.Fingerprint().encode('hex'))
+        print("     * (hex):      ", self.Identifier().hex())
+        print("     * (fpr):      ", self.Fingerprint().hex())
         print("     * (main addr):", self.Address())
         if self.public is False:
             print("   * Secret key")
-            print("     * (hex):      ", self.PrivateKey().encode('hex'))
+            print("     * (hex):      ", self.PrivateKey().hex())
             print("     * (wif):      ", self.WalletImportFormat())
         print("   * Public key")
-        print("     * (hex):      ", self.PublicKey().encode('hex'))
+        print("     * (hex):      ", self.PublicKey().hex())
         print("   * Chain code")
-        print("     * (hex):      ", self.C.encode('hex'))
+        print("     * (hex):      ", self.C.hex())
         print("   * Serialized")
-        print("     * (pub hex):  ", self.ExtendedKey(private=False, encoded=False).encode('hex'))
-        print("     * (prv hex):  ", self.ExtendedKey(private=True, encoded=False).encode('hex'))
+        print("     * (pub hex):  ", self.ExtendedKey(private=False, encoded=False).hex())
+        print("     * (prv hex):  ", self.ExtendedKey(private=True, encoded=False).hex())
         print("     * (pub b58):  ", self.ExtendedKey(private=False, encoded=True))
         print("     * (prv b58):  ", self.ExtendedKey(private=True, encoded=True))
 
